@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.user-image img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.recom-user-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 80%;
+
+}
+
+.user {
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    width: 296px;
+    height: 206px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    transition: 0.5s ease;
+}
+
+.user:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    /* Cambia la sombra al hacer hover */
+}
+
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.user-info h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.user-info p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.btn button {
+    background-color: white;
+    color: #0077B5;
+    border-width: 1px;
+    border-color: #0077B5;
+    padding: 4px 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 5px;
+    width: 100%;
+    transition: 0.5s ease;
+}
+
+.btn button:hover {
+    background-color: hsl(197, 71%, 73%, 0.35);
+}

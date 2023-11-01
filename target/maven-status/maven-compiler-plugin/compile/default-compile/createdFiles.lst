@@ -1,0 +1,5 @@
+logic\NormalUser_.class
+logic\User_.class
+logic\CompanyUser_.class
+logic\Message_.class
+logic\Post_.class

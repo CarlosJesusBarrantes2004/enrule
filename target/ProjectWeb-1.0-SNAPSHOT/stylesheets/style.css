@@ -1,0 +1,510 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(220.55deg, #a531dc 0%, #4300b1 100%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1400px;
+  width: 100%;
+  flex: 1;
+}
+
+/*Home*/
+.header-login {
+  display: flex;
+  margin: 15px 35px;
+  justify-content: right;
+}
+
+.header-login .content-btn {
+  margin-right: 10px;
+}
+
+.home {
+  padding: 90px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.home h1 {
+  font-size: 50px;
+  margin: 10px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.popup-content {
+  background-color: white;
+  height: 85%;
+  width: 30%;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+.popup-content form {
+  flex-direction: column;
+}
+
+.form-sign-up {
+  display: none;
+}
+
+.form-login {
+  display: none;
+}
+
+.form-title {
+  font-size: 1.7em;
+  margin: 5px;
+}
+
+.question {
+  font-size: 0.85em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 3px;
+}
+
+.question label {
+  font-weight: 700;
+}
+
+.question input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"] {
+  appearance: none;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 15px;
+  text-align: center;
+}
+
+.question input {
+  margin-top: 3px;
+}
+
+.question input:focus {
+  border: 2px solid purple;
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(168, 22, 168, 0.49);
+  -moz-box-shadow: 0px 0px 6px 1px rgba(168, 22, 168, 0.49);
+  box-shadow: 0px 0px 6px 1px rgba(168, 22, 168, 0.49);
+}
+
+.popup-content form input[type="submit"] {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 25px;
+  width: 70%;
+  border: none;
+  border-radius: 5px;
+  background-color: #18ec69;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.popup-content form input[type="submit"]:hover {
+  background-color: #0f8a3e;
+  transform: scale(1.1);
+}
+
+.hyper {
+  font-size: 0.8em;
+  color: purple;
+  margin-top: 7px;
+}
+
+.close-btn {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 10px;
+  right: 10px;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fd6868;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background-color: #d63232;
+  transform: scale(1.1);
+}
+
+/*Index*/
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-container h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.searcher {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field {
+  outline: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+.field:focus {
+  border: 2px solid purple;
+}
+
+.searcher input[type="text"] {
+  padding-right: 40px;
+  text-align: left;
+}
+
+.fa-magnifying-glass {
+  position: absolute;
+  right: 5px;
+  padding: 6px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.searcher i:hover {
+  background-color: purple;
+  color: black;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  padding: 20px 0;
+}
+
+.panel {
+  padding: 5px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.pa-configuration,
+.pa-recommendations {
+  flex-basis: 30%;
+}
+
+.pa-content {
+  flex-basis: 40%;
+}
+
+.panel-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  width: 65%;
+  height: 70vh;
+  padding: 10px;
+}
+
+.configuration {
+  float: right;
+  margin-right: 10px;
+}
+
+.panel-info.configuration h2 {
+  margin: 5px 0;
+}
+
+.profile-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0;
+  height: 35%;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.profile-user div:first-child {
+  margin-top: 5px;
+}
+
+.profile-details {
+  font-size: 12px;
+  text-align: center;
+}
+
+.buttons {
+  background-color: #f0f0f0;
+  height: 65%;
+  width: 100%;
+}
+
+/*No me convence*/
+.recommendations {
+  display: block;
+  margin-left: 10px;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  padding: 5px;
+}
+
+.panel-info,
+.content {
+  border-radius: 10px;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(163, 158, 163, 1);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(163, 158, 163, 1);
+  box-shadow: 0px 0px 10px 0px rgba(163, 158, 163, 1);
+}
+
+.ur-post {
+  display: flex;
+  flex-direction: column;
+}
+
+.ur-post textarea {
+  width: 100%;
+  height: 120px;
+  font-size: 12px;
+  font-weight: 400;
+  outline: none;
+  border: 0.1px solid gray;
+  border-radius: 10px;
+  padding: 5px;
+  resize: none;
+}
+
+.ur-post textarea:focus {
+  border-width: 2px;
+  border-color: purple;
+}
+
+.ur-post .ur-post-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+
+.content-btn {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  background-color: #ffffff;
+  transition: 0.5s ease;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.ur-post-buttons button[type="submit"] {
+  background-color: purple;
+  color: white;
+}
+
+.content-btn:hover {
+  transform: scale(1.1);
+  background-color: purple;
+  color: white;
+  text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.9);
+}
+
+.horizontal-line {
+  width: 95%;
+  height: 0.1px;
+  background-color: gray;
+  margin: 10px auto;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 2px;
+}
+
+.posts .post {
+  width: 100%;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.post .post-info {
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*.post-info .post-user {*/
+.user {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.user img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.post-info .post-details {
+  display: flex;
+  flex-direction: column;
+  padding: 3px 8px;
+}
+
+.post-details {
+  flex: 1;
+}
+
+.fa-ellipsis-vertical {
+  font-size: 18px;
+  margin-left: auto;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.fa-ellipsis-vertical:hover {
+  color: purple;
+  transform: scale(1.1);
+}
+
+.post .post-content {
+  padding: 5px;
+}
+
+.post .post-response {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 20px;
+}
+
+.post-response .fa-heart {
+  font-size: 20px;
+  color: black;
+  transition: transform 0.5s ease, color 0.5s ease;
+  cursor: pointer;
+}
+
+.post-response .fa-heart:hover {
+  transform: scale(1.1);
+}
+
+.purple-heart.purple {
+  color: purple;
+}
+
+.panel-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.panel-title h3 {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.panel-title a {
+  font-size: 10px;
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: black;
+  transition: 0.5s ease;
+  border-radius: 15px;
+}
+
+.a-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+}
+
+.a-style :hover {
+  background-color: #ccc;
+}
+
+.rec-user {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  flex: 0 0 22%;
+}
+
+.profile-plus-button {
+  flex: 1;
+  padding: 0 5px;
+}
+
+.profile-info {
+  font-size: 10px;
+}
+
+.add .content-btn {
+  padding: 1px 3px;
+  font-size: 10px;
+}
