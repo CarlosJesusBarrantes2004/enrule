@@ -1,0 +1,11 @@
+header {
+  .btn {
+    color: #000;
+    background-color: #fff;
+
+    &:hover {
+      background-color: rgb(16, 74, 161);
+      color: #fff;
+    }
+  }
+}
