@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+ <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,23 +9,34 @@
     <meta name="description" content="" />
     <title>ENRULE</title>
 
-    <link rel="stylesheet" href="css/style.css" />
-
+    <link href="css/style.css" rel="stylesheet" />
     <script
       src="https://kit.fontawesome.com/ef5a8b4bfd.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <div class="header-login">
-          <button class="content-btn">Sing Up</button>
-          <button class="content-btn">Login</button>
-        </div>
+    <div class="container-xxl">
+      <header class="d-flex m-2 justify-content-end align-items-center">
+        <button
+          class="btn me-2"
+          data-bs-toggle="modal"
+          data-bs-target="#popup-sign-up"
+          id="sign-up-btn"
+        >
+          Sing Up
+        </button>
+        <button
+          class="btn"
+          data-bs-toggle="modal"
+          data-bs-target="#popup-login"
+          id="login-btn"
+        >
+          Login
+        </button>
       </header>
 
-      <div class="home">
+      <div class="home mt-5 text-center">
         <h1>ENRULE</h1>
         <p>
           Enrule ayuda a las empresas a reclutar trabajadores de manera
@@ -35,114 +46,229 @@
       </div>
 
       <!--Popup-->
-      <div class="popup" id="popup">
-        <div class="popup-content" id="popup-content">
-          <form
-            id="form-sign-up"
-            class="form-sign-up"
-            action="SvUser"
-            method="POST"
-            enctype="multipart/form-data"
-          >
-            <h2 class="form-title">Registrese</h2>
-            <div id="questions">
-              <div class="user-questions">
-                <div class="question">
-                  <label>Correo</label
-                  ><input type="email" name="email" required />
+      <div
+        class="modal fade"
+        id="popup-sign-up"
+        tabindex="-1"
+        aria-labelledby="Sign up popup"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="title-popup-sign-up">Regístrate</h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body" style="max-height: 80vh; overflow-y: auto">
+              <form
+                id="form-sign-up"
+                class="form-sign-up"
+                action="SvUser"
+                method="POST"
+                enctype="multipart/form-data"
+              >
+                <div class="mb-3">
+                  <label for="email" class="form-label">Correo</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    required
+                  />
                 </div>
-                <div class="question">
-                  <label>Contraseña</label
-                  ><input type="password" name="password" required />
+                <div class="mb-3">
+                  <label for="password" class="form-label">Contraseña</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    required
+                  />
                 </div>
-                <div class="question">
-                  <label>Elija una de las dos opciones</label>
-                  <span
-                    ><input
+                <div class="mb-3">
+                  <label>Elija una de las dos opciones</label><br />
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
                       type="radio"
                       name="option"
                       value="normal"
                       id="normal-user-option"
                       required
                     />
-                    Normal
-                  </span>
-                  <span>
+                    <label class="form-check-label" for="normal-user-option"
+                      >Normal</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
                     <input
+                      class="form-check-input"
                       type="radio"
                       name="option"
                       value="company"
                       id="company-user-option"
                       required
-                    />Empresa</span
-                  >
+                    />
+                    <label class="form-check-label" for="company-user-option"
+                      >Empresa</label
+                    >
+                  </div>
                 </div>
-              </div>
-              <div id="normal-user-questions" class="hidden">
-                <div class="question">
-                  <label>DNI</label
-                  ><input type="text" name="dni" required disabled />
+                <div id="normal-user-questions" class="hidden">
+                  <div class="mb-3">
+                    <label for="dni" class="form-label">DNI</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="dni"
+                      name="dni"
+                      required
+                      disabled
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="profession" class="form-label">Profesión</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="profession"
+                      name="profession"
+                      required
+                      disabled
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="cv" class="form-label">CV (opcional)</label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="cv"
+                      name="cv"
+                      accept=".pdf, .docx"
+                      disabled
+                    />
+                  </div>
                 </div>
-                <div class="question">
-                  <label>Profesión</label
-                  ><input type="text" name="profession" required disabled />
+                <div id="company-user-questions" class="hidden">
+                  <div class="mb-3">
+                    <label for="ruc" class="form-label">RUC</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="ruc"
+                      name="ruc"
+                      required
+                      disabled
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="description" class="form-label"
+                      >Descripción</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="description"
+                      name="description"
+                      required
+                      disabled
+                    />
+                  </div>
                 </div>
-                <div class="question">
-                  <label>CV (opcional):</label>
-                  <input type="file" name="cv" accept=".pdf, .docx" disabled />
+                <div class="mb-3">
+                  <label for="image" class="form-label">Foto de perfil</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="image"
+                    name="image"
+                    accept="image/*"
+                  />
                 </div>
-              </div>
-              <div id="company-user-questions" class="hidden">
-                <div class="question">
-                  <label>RUC</label
-                  ><input type="text" name="ruc" required disabled />
-                </div>
-                <div class="question">
-                  <label>Descripción</label
-                  ><input type="text" name="description" required disabled />
-                </div>
-              </div>
-              <div class="question">
-                <label>Foto de perfil</label
-                ><input type="file" name="image" accept="image/*" />
-              </div>
+                <button type="submit" class="btn btn-primary">
+                  Regístrate
+                </button>
+                <a id="hyper-login" class="hyper" href="#"
+                  >¿Ya tienes una cuenta?</a
+                >
+              </form>
             </div>
-            <input type="submit" value="Registrese" />
-            <a id="hyper-login" class="hyper" href="#"
-              >¿Ya tienes una cuenta?</a
-            >
-          </form>
-          <form
-            id="form-login"
-            class="form-login"
-            action="SvLogin"
-            method="POST"
-          >
-            <h2 class="form-title">Iniciar Sesión</h2>
-            <div class="user-questions">
-              <div class="question">
-                <label>Correo</label
-                ><input type="email" name="email" required />
-              </div>
-              <div class="question">
-                <label>Contraseña</label
-                ><input type="password" name="password" required />
-              </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="popup-login"
+        tabindex="-1"
+        aria-labelledby="Login popup"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="title-popup-login">Iniciar Sesión</h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
+            <div class="modal-body" style="max-height: 80vh; overflow-y: auto">
+              <form
+                id="form-login"
+                class="form-login"
+                action="SvLogin"
+                method="POST"
+              >
+                <div class="mb-3">
+                  <label for="email" class="form-label">Correo</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Contraseña</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    required
+                  />
+                </div>
 
-            <input type="submit" value="Iniciar sesion" />
+                <button type="submit" class="btn btn-primary">
+                  Iniciar sesión
+                </button>
 
-            <a id="hyper-sign-up" class="hyper" href="#"
-              >¿No estas registrado?</a
-            >
-          </form>
-          <button class="close-btn" id="close-btn">
-            <i class="fa-solid fa-x"></i>
-          </button>
+                <a id="hyper-sign-up" class="hyper" href="#"
+                  >¿No estás registrado?</a
+                >
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
     <script src="./js/code.js"></script>
   </body>
 </html>

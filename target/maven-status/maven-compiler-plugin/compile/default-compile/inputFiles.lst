@@ -5,6 +5,7 @@ E:\UTP\Ciclo6\DWI\ProjectWeb\src\main\java\logic\User.java
 E:\UTP\Ciclo6\DWI\ProjectWeb\src\main\java\servlets\SvLogin.java
 E:\UTP\Ciclo6\DWI\ProjectWeb\src\main\java\logic\CompanyUser.java
 E:\UTP\Ciclo6\DWI\ProjectWeb\src\main\java\logic\UserFollowService.java
+E:\UTP\Ciclo6\DWI\ProjectWeb\src\main\java\servlets\SvEditUser.java
 E:\UTP\Ciclo6\DWI\ProjectWeb\src\main\java\logic\LogicController.java
 E:\UTP\Ciclo6\DWI\ProjectWeb\src\main\java\projectweb\resources\JakartaEE8Resource.java
 E:\UTP\Ciclo6\DWI\ProjectWeb\src\main\java\persistence\exceptions\NonexistentEntityException.java
@@ -16,5 +17,6 @@ E:\UTP\Ciclo6\DWI\ProjectWeb\src\main\java\persistence\NormalUserJpaController.j
 E:\UTP\Ciclo6\DWI\ProjectWeb\src\main\java\persistence\PostJpaController.java
 E:\UTP\Ciclo6\DWI\ProjectWeb\src\main\java\logic\NormalUser.java
 E:\UTP\Ciclo6\DWI\ProjectWeb\src\main\java\projectweb\JakartaRestConfiguration.java
+E:\UTP\Ciclo6\DWI\ProjectWeb\src\main\java\servlets\SvDeleteUser.java
 E:\UTP\Ciclo6\DWI\ProjectWeb\src\main\java\persistence\exceptions\IllegalOrphanException.java
 E:\UTP\Ciclo6\DWI\ProjectWeb\src\main\java\persistence\UserJpaController.java
