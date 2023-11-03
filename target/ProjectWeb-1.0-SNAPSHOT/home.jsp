@@ -11,7 +11,6 @@ contentType="text/html" pageEncoding="UTF-8"%>
     <title>ENRULE</title>
 
     <link rel="stylesheet" href="css/style.css" />
-
     <script
       src="https://kit.fontawesome.com/ef5a8b4bfd.js"
       crossorigin="anonymous"
@@ -19,28 +18,70 @@ contentType="text/html" pageEncoding="UTF-8"%>
   </head>
 
   <body>
-    <div class="container">
-      <header>
-        <div class="header-container">
-          <h2>Enrule</h2>
+    <div class="container-xxl vh-100">
+      <header class="d-flex mt-2 justify-content-center align-items-center">
+        <h2>Enrule</h2>
 
-          <form action="#" method="post" class="searcher">
-            <input class="field" type="text" name="" />
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </form>
-        </div>
+        <form
+          action="#"
+          method="post"
+          class="searcher d-flex justify-content-center align-items-center ml-2"
+        >
+          <input
+            class="form-control field"
+            type="text"
+            name=""
+            placeholder="Search"
+          />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </form>
       </header>
 
-      <div class="main">
+      <div class="row mt-4 flex-grow-1">
+        <!--Panel de configuración-->
+        <div class="col-md-3 d-flex flex-column">
+          <div class="card card-fill d-flex flex-column h-100">
+            <div class="card-header text-center h-30">
+              <% User user = (User) request.getSession().getAttribute("user");%>
+              <h2>Tú</h2>
+              <div class="profile-user mb-3">
+                <div class="user">
+                  <a href="edit-user.jsp">
+                    <img
+                      src="<%=user.getPhoto() %>"
+                      alt=""
+                      class="rounded-circle"
+                      width="50px"
+                      height="50px"
+                    />
+                  </a>
+                </div>
+                <div class="profile-details">
+                  <p><%=user.getName() %></p>
+                </div>
+              </div>
+              <div class="buttons"></div>
+            </div>
+            <div class="card-body h-70 flex-grow-1">Hola</div>
+          </div>
+        </div>
+        <!--Panel de publicaciones-->
+        <div class="col-md-6">Posts</div>
+        <!--Panel de búsqueda-->
+        <div class="col-md-3">Hola</div>
+      </div>
+
+      <!--
+        <div class="main">
         <div class="panel pa-configuration">
           <div class="panel-info configuration">
-            <% User user = (User) request.getSession().getAttribute("user");%>
+            
             <h2>Tú</h2>
             <div class="profile-user">
               <div class="user">
                 <a href="edit-user.jsp">
                   <img
-                    src="<%=user.getPhoto() %>"
+                    src=""
                     alt=""
                     width="50px"
                     height="50px"
@@ -48,7 +89,7 @@ contentType="text/html" pageEncoding="UTF-8"%>
                 </a>
               </div>
               <div class="profile-details">
-                <p><%=user.getName() %></p>
+                <p></p>
               </div>
             </div>
             <div class="buttons"></div>
@@ -264,6 +305,7 @@ contentType="text/html" pageEncoding="UTF-8"%>
           </div>
         </div>
       </div>
+      -->
     </div>
 
     <script src="./js/code.js"></script>

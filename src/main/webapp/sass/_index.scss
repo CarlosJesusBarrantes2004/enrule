@@ -1,3 +1,17 @@
 .home {
   color: #fff;
+
+  & h1 {
+    font-weight: 700;
+  }
+}
+
+.modal-header {
+  & h3 {
+    font-weight: 700;
+  }
+}
+
+.hidden {
+  display: none;
 }

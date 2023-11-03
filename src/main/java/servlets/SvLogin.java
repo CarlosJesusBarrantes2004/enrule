@@ -35,13 +35,9 @@ public class SvLogin extends HttpServlet {
         
         if(user != null){
             HttpSession session = request.getSession();
-            
-            if(user instanceof NormalUser){
-                NormalUser useN = (NormalUser) user;
-            }else if(user instanceof CompanyUser){
-                CompanyUser useC = (CompanyUser) user;
-            }
+
             session.setAttribute("user", user);
+            session.setAttribute("type", (user instanceof NormalUser)?"normal":"company");
 
             response.sendRedirect("home.jsp");
         }

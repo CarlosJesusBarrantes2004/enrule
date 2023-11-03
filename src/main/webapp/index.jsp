@@ -22,6 +22,7 @@
           class="btn me-2"
           data-bs-toggle="modal"
           data-bs-target="#popup-sign-up"
+          id="sign-up-btn"
         >
           Sing Up
         </button>
@@ -29,6 +30,7 @@
           class="btn"
           data-bs-toggle="modal"
           data-bs-target="#popup-login"
+          id="login-btn"
         >
           Login
         </button>
@@ -48,13 +50,13 @@
         class="modal fade"
         id="popup-sign-up"
         tabindex="-1"
-        aria-labelledby="popup-sign-upLabel"
+        aria-labelledby="Sign up popup"
         aria-hidden="true"
       >
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="popup-sign-upLabel">Regístrate</h5>
+              <h3 class="modal-title" id="title-popup-sign-up">Regístrate</h3>
               <button
                 type="button"
                 class="btn-close"
@@ -206,13 +208,13 @@
         class="modal fade"
         id="popup-login"
         tabindex="-1"
-        aria-labelledby="popup-loginLabel"
+        aria-labelledby="Login popup"
         aria-hidden="true"
       >
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="popup-loginLabel">Iniciar Sesión</h5>
+              <h3 class="modal-title" id="title-popup-login">Iniciar Sesión</h3>
               <button
                 type="button"
                 class="btn-close"

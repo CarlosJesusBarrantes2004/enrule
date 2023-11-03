@@ -30,7 +30,6 @@ import logic.CompanyUser;
 @MultipartConfig
 @WebServlet(name = "SvUser", urlPatterns = {"/SvUser"})
 public class SvUser extends HttpServlet {
-
     private final String PATH_CV = "/files/cv";
     private final String PATH_PHOTOS = "/files/photos";
     private final String SUBFOLDER_PHOTOS = "photos";
@@ -125,9 +124,7 @@ public class SvUser extends HttpServlet {
             if (responseCode == HttpURLConnection.HTTP_OK) {
                 String jsonResponse = readResponseFromApi(connection);
 
-                JsonObject apiData = parseJson(jsonResponse);
-
-                return apiData;
+                return parseJson(jsonResponse);
             }
         } catch (IOException e) {
             e.printStackTrace();
